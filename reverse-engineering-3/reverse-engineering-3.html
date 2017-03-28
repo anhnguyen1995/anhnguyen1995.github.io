@@ -1,0 +1,81 @@
+<head>
+	<title>
+		Anh's Reverse Engineering Project 2
+	</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<style>
+		h1 {
+			font-family: sans-serif;
+			font-size:26px;
+			font-weight: bold;
+		}
+		p {
+			font-family: sans-serif;
+			line-height: 1.2;
+			font-weight: 200;
+		}
+		.source {
+			font-family: sans-serif;
+			font-size: 12px;
+			color:gray;
+			line-height: 1.5em;
+		}
+	</style>
+</head>
+<body>
+	<h1>...But Levels Are Still Highest in the Region</h1>
+	<p>The city's lead-exposure rate in 2014 was higher than any of its surrounding suburban counties, and twice the national average.</p>
+	<div id="chart1"></div>
+	<div class="source">
+		<p>
+			Children under 7 years old<br>
+			SOURCE: Philadelphia Department of Health; Pa. Department of Health; <br>
+			NJ Department of Health; Center for Disease Control and Prevention
+		</p>
+	</div>
+
+	<!--JS: Chart1 -->
+
+	<script>
+		$(function() {
+			var myChart = Highcharts.chart('chart1', {
+				chart: {
+					type: 'bar'
+				},
+				series: [{
+			name:"Percentage of BLL by counties and country",
+			data:[1.5,1.7,2.1,2.4,{y:3.8,color:'#D8E32D'},5.1,6.2,6.7,8.0],
+			color: "#5F7495"
+			}],
+				xAxis: {
+			    categories: ["Burlington","Gloucester","Camden","Bucks*","<strong>US</strong>","Montgomery*","Chester*","Delaware*","Philadelphia"],
+			    reversed: false
+		    },
+		    yAxis: {
+			    title: {
+				  text: " "
+			    },
+			    min: null,
+			    max: null,
+		    },
+				credits: {
+					enabled: false
+				},
+				legend: {
+			layout: "horizontal",
+			align: "center",
+			verticalAlign: "bottom",
+			enabled: false,
+			
+		},
+				title: {
+					text: ''
+				},
+		})
+	})
+	
+	</script>
+
+
+</body>
