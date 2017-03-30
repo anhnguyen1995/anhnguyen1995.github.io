@@ -5,19 +5,25 @@
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 	<style>
 		body {
 			color: #3f4145;
 			background-color: #ffe3d0;}
 		h2 {font-family:"Menlo-Regular";
-			font-size:1.4em;
+			font-size:4em;
 			font-weight:500;
-			line-height: 28px;}
+			line-height: 40px;
+			background-color:#dbb397;
+			padding:5px;border-radius:3px;
+			}
 		ul {font-family:Georgia;
 			font-size:18px;
 			line-height: 1.5em;
 			word-spacing:-1px;}
-		.block1 {background-color: #f47676;
+		.block1 {background-color: #b88563;
 				clear:both;
 				padding:20px;
 				font-size:15px;}
@@ -28,10 +34,13 @@
 		#assignment {float:right;
 					margin-top: 0}
 		#headline-subhead {
-			font-family: "Menlo-Regular"
-			padding:10px;
+			font-family: "Menlo-Regular";
 
 		},
+		.mySlides {
+			width:40%;
+			align-content: center;
+		}
 		
 		p h4 {font-family: "Menlo-Regular"}
 		.source {
@@ -51,7 +60,9 @@
 		<h4>Data Story 2</h4></div>
 	<br>
 	<br>
-	<div id="chart03"></div>
+	<div id="chart03", style="min-width: 40%; height: 60%; margin: 0 auto">
+		
+	</div>
 	<br>
 		<p class="source">SOURCE: <a href="https://www.census.gov/prod/cen2010/briefs/c2010br-11.pdf">U.S. Census Bureau</a><p>
 	<br>
@@ -59,8 +70,8 @@
 		<h2 align="center">The Guide to Orientalism</h2>
 		<h5>Is it racist to say 'Oriental' to Asian decendants even if it's literally mean "of the East"?</h5></div>
 	<div class="opening"> 
-	<p>Chances are you have heard about <i>orientalism</i> before and that you know not to say the word because it might offend people of Asian descent. But deep down you still don't know why it's wrong or offensive.</p></div>
-	<div id="chart01">
+	<p class="right", style="border: 1px solid">Chances are you have heard about <i>orientalism</i> before and that you know not to say the word because it might offend people of Asian descent. But deep down you still don't know why it's wrong or offensive.</p></div>
+	<div id="chart01", class="left">
 	</div>
 	<div>
 		<!--<img src="image/image1.png" width="150" height="150"/></div>--></div>
@@ -73,7 +84,6 @@
 					polar: true,
 					type: 'line',
 					backgroundColor: '#ffe3d0',
-					align: 'center',
 				},
 				title: {
 					text: 'U.S. Asian-American Population',
@@ -143,7 +153,7 @@
         backgroundColor: '#ffe3d0',
     },
     title: {
-        text: 'U.S. Population Projection 2060',
+        text: 'U.S. Demographics Projection 2014-2060',
         style: {
         	fontFamily: 'Menlo-Regular',
 			color:'#3f4145',
@@ -155,7 +165,7 @@
     yAxis: {
         min: 0,
         title: {
-            text: 'U.S. Demographics',
+            text: '%',
             max: 100,
             min: 0,
         },
@@ -224,32 +234,54 @@
 		<li>You are frustrated because of the demands from all minority group to be politically correct and that no matter what you do, people will still think you are racist because of you white (light) skin tone</li>
 		<li>You withdraw from all social conversation that might trigger the word because you have more important things to do than being called "ignorant"</li>
 	</ul></div>
-	<h5 align="center">FEAR NOT MY FRIEND!</h5>
+	<h5 align="center", style="padding:12px background-color:#ffe3d0",>FEAR NOT MY FRIEND!</h5>
 	<p>Contrary to many people's thinking, orientalism, in regard to the Middle East and Far East, actually comes from Western ideology.<p>
 	<div class="map"></div>
 	<p>At first, <i>orientalism</i> consists of ideas, cultural artifacts, artworks and traditions coming from eastern countries.</p>
 	<p><i>Orientalism</i>, however, is not a truthful reflection of the day-to-day life of the people living in these countries. It is rather a fabrication that fits the perception, sometimes prejudice, of Westerners about eastern cultures.</p>
 	<h2>Why is this a harmful thing?</h2>
-	<p>Have you heard of Asian fetish? You might think it's just a personal preference that has nothing to do with what we are talking about here, but let's me break it down to you.</p>
+	<p>Have you heard of Asian fetish? You might think it's just a personal preference that has nothing to do with what we are talking about here, but let's me give you some context.</p>
 	<p>More than a hundred years ago, the French colonized many countries in the world. From Algeria in Africa to Vietnam in South East Asia, the French invaded and claimed the native people to be uncivilized, babarian and unholy. In their words, these people need France's guidance and assistance to be more progressive and civilized, which might come with oppression, exploitation and enslavement of the natives.</p>
 	<p>In this grand scheme to justify their unruly colonization, the French sent out photographers to record the supposedly dangerous and imbecile groups of natives</p>
 	<p>What was recorded would be sent back to the French people in form of postcards that offered a glimpse of what <i>orientalism</i> looks like</p>
-	<p>During this era, women were often sexualized by French photographers in these postcards. Young women were put under a controlled environment or inside a studio where nude photo of them were taken in return for foods and necessities for their families.</p>
+	<p>During this era, women were often sexualized by French photographers in these postcards. Young women were forced inside a studio where nude photo of them were taken in return for foods and necessities for their families.</p>
 	<p>The results came shockingly:</p>
-	<div id="photo1">
-		<img src="image/image01.jpg"/>
-	</div>
-	<div id="photo2">
-		<img src="image/image02.jpg"/>
-	</div>
-	<div id="photo3">
-		<image src="image/image03.jpg"/>
-	</div>
-	<div id="photo4">
-		<image src="image/image04.jpg"/>
-	</div>
+	
+		<img class="mySlides" src="image/image01.jpg"/>
+		<img class="mySlides" src="image/image02.jpg"/>
+		<img class="mySlides" src="image/image03.jpg"/>
+		<img class="mySlides" src="image/image04.jpg"/>
+	
+	<button class="button-left" onclick="plusDivs(-1)">&#10094;</button>
+<button class="button-right" onclick="plusDivs(+1)">&#10095;</button>
+<script>
+	var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+    }
+    x[slideIndex-1].style.display = "block"; 
+}
+
+</script>
+<p>When Western colonizers imposed their interpretation of Orientalism on native people, the damages lasted for a long time. Nowadays, men with Asian fetish still think of oriental women as prized sexual objects without any autonomy and opinions.<p>
+<p>It't unfair for anyone to be judged based on where they're from and not who they are. Orientalism perpetuates this concept and reinforced the superiority of the West's civilizations over the inferiority of the East's.</p>
 	<h2>Why is it no longer a thing?</h2>
-	<p>Because Asian-Americans are kicking asses in education attainment, wealth and income:</p>
+	<p>The term got out of fashion in the 1960s partly because of the Civil Rights Movement but not because of the reason you are thinking. A U.S. News & World Reports in 1966 says it best:</p>
+	<h4><i>“At a time when Americans worry over the plight of racial minorities — one minority, the nation’s 300,000 Chinese-Americans, is winning wealth and respect by dint of its own hard work.” These minorities were good minorities who believed in “their own efforts — not a welfare check” to achieve the American Dream."</i></h4>
+	<p>That being said, what U.S. News & World Reports did was pitting minorities group against one another and undermining the effort of the Civil Rights Movement which fought for African Americans, Native Americans, and Latino/a. The model minority myth was born based on mere "good" stereotype that veiled the life of many destitute Asian-Americans, who came to the U.S. as political refugees.</p>
+	<p>In the chart below, you can see for median weekly earnings, Asian group exceeds White group ($993 to $835), yet the poverty rate of Whites is only 9.4% compared to Asians' 12.5%.</p>
+	<p>When we group all Asians together and put them in a box, the number supports the progress Asian-Americans have made in the U.S. with their education attainment and wealth. However, we will be undoubtedly blinded from the fact that Asian-Americans' poverty rate is above 10% and that Cambodian-Americans have the lowest high school graduation rate of all race/ethnic groups. 
 	<div id="chart02"></div>
 	<script>
 		$(function () {
@@ -337,7 +369,12 @@
 		})
 	</script>
 <p class="source">SOURCE: <a href="https://www.bls.gov/news.release/union2.t02.htm">Bureau of Labor Statistics</a></p>
-
+<br>
+<br>
+<br>
+<p>Last but not least, even though <i>Oriental</i> is no longer a degrading term, Asian-Americans still suffer from microaggression and racism. It's not common for Asian-Americans to be told "go back to where you come from" or "your English is very good". Besides, "gook" and "chink" are way more effective and do not require a deep backgrounds in history of past oppresion to understand.</p>
+<p>In 2011, former President Barack Obama banned the word "negro" and "oriental" in federal law, but he didn't make the words illegal. That's why you still see "oriental" on your noodle packet, at a local Asian super market, or on signage of Asian pharmacies and acupunctures.</p>
+<p> Now that you have learned about the history of Orientalism, you'll be the judge.</p>
 
 	
 
