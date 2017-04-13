@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MOJO News Quiz Basic</title>
+    </head>
+    <body>
+    <!--STYLES-->
+        
+        <!--EXTERNAL-->
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css"> 
+        <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+       
+        <!--INTERNAL-->
+        <style>
+        	body {
+        		background-color: #5c5c5c;
+        		color: #fc7d3d;
+        	}
+
+        	#quiz-wrapper {
+        		width:80%;
+        		margin:0 auto;
+        		font-family: 'Slabo 27px', serif;
+        	}
+            .possible_answer  {
+                padding: .75em;
+            }
+
+            .possible_answer:hover {
+                background: rgba(254, 231, 88, 1);
+                cursor: pointer;
+                font-weight: bold;
+            }
+
+            .correct-answer, .wrong-answer {
+                opacity: .75;
+                cursor: pointer;
+            }
+
+            .wrong-answer {
+                background: #FF8362;    
+            }
+
+            .correct-answer {
+                background: #62DA97;
+            }
+
+            .selected {
+                opacity: 1;
+            }
+
+            .selected:hover, .correct-answer:hover, .wrong-answer:hover {
+                opacity: 1;
+            }
+
+            .how_you_did {
+                text-align: center;
+                padding: 1em;
+                background-color: rgb(254, 231, 88);
+                font-weight: bold;
+                font-size: 1.25em;
+                -webkit-box-shadow: 0px 7px 5px rgba(50, 50, 50, 0.65);
+                -moz-box-shadow:    0px 7px 5px rgba(50, 50, 50, 0.65);
+                box-shadow:         0px 7px 5px rgba(50, 50, 50, 0.65);
+            }
+
+            /*multimedia styling*/
+
+            img, .youtube {
+                margin-bottom: 1em;
+                min-height: 200px;
+                max-height: 200px;
+            }
+
+            .possible_answer img {
+                max-height: 24em;
+            }
+
+            .question img, .revealed_answer img, .selected img, .correct-answer img, .wrong-answer img {
+                max-height: 24em;
+                display: block;
+            }
+
+            .videoembed {
+                position: relative;
+                padding-bottom: 56.25%;
+                padding-top: 30px;
+                height: 0;
+                overflow: hidden;
+            }
+
+            .videoembed iframe, .videoembed object, .videoembed embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+
+    <!--CONTENT-->
+    	<div id="quiz-wrapper">
+        <div class="container-fluid">
+            <div id="quiz"></div>
+        </div>
+        </div>
+
+    <!--JAVASCRIPT-->
+            <script src="js/jquery.js" type="text/javascript"></script>
+            <script src="js/tabletop.js" type="text/javascript"></script>
+            <script src="js/script.js" type="text/javascript"></script>
+            
+            <script type="text/javascript">
+                var quiz = jQuery('#quiz').quiz('https://docs.google.com/spreadsheets/d/1LW35IUP9Z3Z2WLd5w5dGRuJuwRi3er7CnKs2rqa3ras/pubhtml'); //your published spreadsheet key or URL goes here
+            </script>
+
+    </body>
+</html>
