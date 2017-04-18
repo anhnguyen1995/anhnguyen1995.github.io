@@ -1,0 +1,141 @@
+<head>
+	<title>Anh's Highmaps Project</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+	</script>
+	<script src="http://code.highcharts.com/maps/highmaps.js"></script>
+	<script src="http://code.highcharts.com/mapdata/countries/us/us-all-all.js">
+	</script>
+	<style>
+	th {
+		height: 10px;
+	}
+	tr {
+		font-size:15px;
+	}
+	body {
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	</style>
+
+
+</head>
+<body>
+	<script>
+	/*SCRIPT*/
+		$(function () {
+			$.getJSON('data/tutorial-data.json', function(data) {
+				var countiesMap = Highcharts.geojson(Highcharts.maps['countries/us/us-all-all']),
+				lines = Highcharts.geojson(Highcharts.maps['countries/us/us-all-all'], 'mapline'),
+				options;
+				options = {
+					series: [{
+						mapData: countiesMap,
+						data: data, 
+						joinBy: ["hc-key","code"],
+						name: "Positive Cases",
+
+						nullColor: '#cccccc',
+						borderColor: '#ffffff',
+						borderWidth: .5,
+
+						states: {
+							hover: {
+								color:'#ffffff',
+							}
+						}
+					}],
+					colorAxis: {
+						dataClasses: [{
+							name: "n/a",
+							color:"#cccccc",
+						},
+						{	name: "<5 tested",
+							color: "#999999",	
+						},
+						{
+							to:0,
+							color: "#e6e3f0",
+						},
+						{
+							from:.1,
+							to:.299,
+							color: "#cbc9e2",
+						},
+						{
+							from: .3,
+							to: .799,
+							color:"#9e98c8",
+						},
+						{
+							from: .8,
+							to:100,
+							color: "#6a51a3",
+						},	
+							]
+
+						},
+
+					
+					title: {
+						text:""
+					},
+					credits: {
+						enabled: false
+					},
+					legend: {
+						title: {
+							text:"Percent of children with EBLLs between 5ug/dL and 9ug/dL",
+							style: {
+								fontWeight: 100,
+							}
+						},
+					verticalAlign: "top",
+					valueDecimals:1,
+					valueSuffix:"%",
+					symbolRadius:0,
+					symbolHeight:14,
+					},
+
+				};
+				$('#container').highcharts('Map', options);0
+
+			});
+			
+
+
+
+
+
+
+
+		});
+
+
+
+
+
+
+
+	</script>
+	<div id="container">Downloading map...</div>
+	<!--Attempt to create VOX legends by creating 5 different divs and let them float next to each other-->
+	<table style="width:100%">
+  <tr>
+    <th style="background-color:#cccccc"> </th>
+    <th style="background-color: #999999"></th> 
+    <th style="background-color: #e6e3f0"></th>
+    <th style="background-color: #cbc9e2"></th>
+    <th style="background-color: #9e98c8"></th>
+    <th style="background-color: #6a51a3"></th>
+  </tr>
+  <tr>
+    <td>n/a</td>
+    <td> < 5 tested</td> 
+    <td> < 0% </td>
+    <td> < 0.03% </td>
+    <td> < 0.08% </td>
+    <td> > 0.08% </td>
+  </tr>
+</table>
+</body>
