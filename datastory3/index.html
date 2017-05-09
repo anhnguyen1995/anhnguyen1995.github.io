@@ -139,80 +139,62 @@ Highcharts.chart('container', {
     title: {
         text: ''
     },
+    subtitle: {
+        text: ''
+    },
     xAxis: {
         categories: [
-            'Philadelphia SD',
-            'Tredyffrin/Easttown SD',
-        ]
+            'Philadelphia School District',
+            'Tredyffrin/Easttown School District',
+        ],
+        crosshair: true
     },
-    yAxis: [{
+    yAxis: {
         min: 0,
         title: {
             text: ''
         }
-    }, {
-        title: {
-            text: ''
-        },
-        opposite: true
-    }],
-    legend: {
-        shadow: false
     },
     tooltip: {
-        shared: true
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>${point.y} </b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    exporting: {
+    		enabled:false
+    },
+    credits: {
+    		enabled: false
     },
     plotOptions: {
         column: {
-            grouping: false,
-            shadow: false,
+            pointPadding: 0.2,
             borderWidth: 0
         }
-    },
-    exporting: {
-    	enabled:false
-    },
-    credits: {
-    	enabled:false
     },
     series: [{
         name: 'Starting salary for B.A./B.S.',
         color: 'rgba(165,170,217,1)',
-        data: [45360, 50250],
-        pointPadding: 0.3,
-        pointPlacement: -0.2,
-         tooltip: {
-            valuePrefix: '$',
-        },
+        data: [45360,50250]
+
     }, {
         name: 'Starting salary for M.A./M.S.',
         color: 'rgba(126,86,134,.9)',
-        data: [46694,51100],
-        pointPadding: 0.4,
-        pointPlacement: -0.2,
-         tooltip: {
-            valuePrefix: '$',
-        },
+        data: [46694,51100]
+
     }, {
         name: 'Average household income',
         color: 'rgba(248,161,63,1)',
-        data: [34207, 99728],
-        tooltip: {
-            valuePrefix: '$',
-        },
-        pointPadding: 0.3,
-        pointPlacement: 0.2,
-        yAxis: 1
+        data: [34207,99728]
+
     }, {
         name: 'National household income',
         color: 'rgba(186,60,61,.9)',
-        data: [51939,51939],
-        tooltip: {
-            valuePrefix: '$',
-        },
-        pointPadding: 0.4,
-        pointPlacement: 0.2,
-        yAxis: 1
+        data: [51939,51939]
+
     }]
 });
 
