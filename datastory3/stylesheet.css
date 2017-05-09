@@ -1,9 +1,13 @@
 body {
 	margin-left:150px;
-	margin-right:150px;
+	margin-right:100px;
 	font-family: 'Gentium Basic', serif;
 
 }
+#pic1 {
+	margin-left: 0
+}
+
 .headline {
 	position: relative;
 	font-family: 'Eczar', serif;
