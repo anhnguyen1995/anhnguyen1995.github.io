@@ -5,6 +5,7 @@ body {
 
 }
 .headline {
+	position: relative;
 	font-family: 'Eczar', serif;
 	color:#ffffff;
 }
