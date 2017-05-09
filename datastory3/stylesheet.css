@@ -13,7 +13,7 @@ body {
 	position: relative;
 	width:100%;
 	font-family: 'Eczar', serif;
-	color:#550000;
+	color:#ffffff;
 }
 h2 {
 	position:absolute;
@@ -31,7 +31,7 @@ h4 {
 }
 h3 {
 	text-align: center;
-	font-weight: 1.5em;
+	font-weight: 2em;
 }
 .subhead {
 	font-family: 'Gentium Basic', serif;
